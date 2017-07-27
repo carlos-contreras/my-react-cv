@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SectionItem from './SectionItem';
 
 function Section(props) {
@@ -9,13 +10,23 @@ function Section(props) {
         {
           props.items.map(function(item, index) {
             return (
-              <SectionItem title={item.title} description={item.description} key={index} />
+              <SectionItem title={item.title} description={item.description} key={index.toString()} />
             );
           })
         }
       </div>
     </div>
   );
+}
+
+Section.prototypes = {
+  title: PropTypes.string,
+  items: PropTypes.array
+};
+
+Section.defaultProps = {
+  title: 'Section Title',
+  items: []
 }
 
 export default Section;

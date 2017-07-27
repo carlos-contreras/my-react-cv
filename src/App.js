@@ -5,7 +5,7 @@ import sections from './objects/sections';
 import './App.css';
 
 const sectionCollections = sections.map(function(section, index) {
-  return (<Section title={section.title} items={section.items} key={index} />);
+  return (<Section title={section.title} items={section.items} key={index.toString()} />);
 });
 
 class App extends Component {

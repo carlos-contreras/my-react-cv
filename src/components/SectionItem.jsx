@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
 function SectionItem(props) {
@@ -8,6 +9,16 @@ function SectionItem(props) {
       <p className="section_item_description">{ props.description }</p>
     </div>
   );
+}
+
+SectionItem.prototypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+};
+
+SectionItem.defaultProps = {
+  title: 'Item Title',
+  description: 'Item description'
 }
 
 export default SectionItem;
